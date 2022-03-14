@@ -42,8 +42,9 @@ describe('#findSleepiestMinute', () => {
   test('returns a number of the minute the sleepiest guard sleeps through the most', () => {
     const shiftData = sortDataByShift(testData);
     const guardData = sortShiftDataByGuard(shiftData);
-    const { sleepiestGuard } = findSleepiestGuard(guardData);
+    const { sleepiestGuard, sleepiestGuardId } = findSleepiestGuard(guardData);
     const actual = findSleepiestMinute(sleepiestGuard);
     expect(actual).toEqual(24);
+    expect(actual * sleepiestGuardId).toEqual(240);
   })
 })

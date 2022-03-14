@@ -1,3 +1,5 @@
+// findSleepiestGuard returns an object with a sleepiestGuard object and a sleepiestGuardId number
+
 const findSleepiestGuard = (guardData) => {
   const sleepyGuards = Object.keys(guardData)
     .filter((guardId) => {

@@ -19,7 +19,7 @@ const reposeRecord = () => {
   const { sleepiestGuard, sleepiestGuardId } = findSleepiestGuard(dataByGuard);
   const sleepiestMinute = findSleepiestMinute(sleepiestGuard);
 
-    return sleepiestGuardId * sleepiestMinute;
+  return sleepiestGuardId * sleepiestMinute;
 }
 
 console.log(reposeRecord());

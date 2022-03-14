@@ -1,16 +1,20 @@
+// sleepiestMinute returns a number representing the minute the guard sleeps through the most
+
 const findSleepiestMinute = (sleepiestGuard) => {
+  // create an array of all sleep times ([ { startOfSleep: minutesAsleep } ])
   const sleepiestGuardTimes = [];
   Object.values(sleepiestGuard.shifts).forEach((sleepyTime) => {
     if (Object.keys(sleepyTime).length > 1) {
-      sleepiestGuardTimes.push({ [Object.keys(sleepyTime)[0]]: sleepyTime[Object.keys(sleepyTime)[0]]  });
-      sleepiestGuardTimes.push({ [Object.keys(sleepyTime)[1]]: sleepyTime[Object.keys(sleepyTime)[1]]  });
+      const firstNap = Object.keys(sleepyTime)[0];
+      const secondNap = Object.keys(sleepyTime)[1];
+      sleepiestGuardTimes.push({ [firstNap]: sleepyTime[firstNap]  });
+      sleepiestGuardTimes.push({ [secondNap]: sleepyTime[secondNap]  });
     } else {
       sleepiestGuardTimes.push(sleepyTime);
     }
   });
 
-  // find the sleepiest minute
-  // couldn't get .reduce working on this one, plz show me a better way
+  // tally all the minutes asleep
   let minuteCount = {};
   sleepiestGuardTimes
     .forEach((time) => {
@@ -27,6 +31,7 @@ const findSleepiestMinute = (sleepiestGuard) => {
       }
     });
 
+  // sort minuteCount by value to find sleepiestMinute
   const sleepiestMinute = Number(Object.keys(minuteCount)
     .sort((a, b) => minuteCount[b] - minuteCount[a])[0]
     .substring(3));
