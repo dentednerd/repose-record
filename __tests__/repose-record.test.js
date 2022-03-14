@@ -4,10 +4,12 @@ const {
   findSleepiestGuard,
   findSleepiestMinute
 } = require('../utils');
-const { testData } = require('./testData.js');
-const { expectedDataByShift } = require('./expectedDataByShift');
-const { expectedDataByGuard } = require('./expectedDataByGuard');
-const { expectedSleepiestGuard } = require('./expectedSleepiestGuard');
+const {
+  testData,
+  expectedDataByShift,
+  expectedDataByGuard,
+  expectedSleepiestGuard
+} = require('./testData.js');
 
 describe('sortDataByShift', () => {
   test('returns an array of arrays of shift data', () => {
