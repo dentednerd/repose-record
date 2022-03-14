@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "start": "node ./repose-record.js",
+    "test": "jest ./__tests__/repose-record.test.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dentednerd/repose-record.git"
@@ -13,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/dentednerd/repose-record/issues"
   },
-  "homepage": "https://github.com/dentednerd/repose-record#readme"
+  "homepage": "https://github.com/dentednerd/repose-record#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
 }
